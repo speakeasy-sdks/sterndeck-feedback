@@ -4,7 +4,8 @@
 
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios from "axios";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 /**
  * Contains the list of servers available to the SDK
@@ -33,8 +34,8 @@ export class SDK {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "1.1.0";
-  private _genVersion = "2.17.8";
+  private _sdkVersion = "1.1.1";
+  private _genVersion = "2.17.9";
   private _globals: any;
 
   constructor(props?: SDKProps) {
@@ -73,6 +74,7 @@ export class SDK {
         throw new Error(`Error serializing request body, cause: ${e.message}`);
       }
     }
+
     if (!(security instanceof utils.SpeakeasyBase)) {
       security = new operations.FeedbackSecurity(security);
     }
