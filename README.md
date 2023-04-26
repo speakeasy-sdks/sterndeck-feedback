@@ -19,13 +19,10 @@ yarn add https://github.com/speakeasy-sdks/sterndeck-feedback
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```typescript
-import {
-  FeedbackRequestBody,
-  FeedbackResponse
-} from "Feedback/dist/sdk/models/operations";
-
-import { AxiosError } from "axios";
 import { SDK } from "Feedback";
+import { FeedbackRequestBody, FeedbackResponse } from "Feedback/dist/sdk/models/operations";
+import { AxiosError } from "axios";
+
 const sdk = new SDK();
 
 const req: FeedbackRequestBody = {
@@ -35,7 +32,9 @@ const req: FeedbackRequestBody = {
 };
 
 sdk.feedback(req).then((res: FeedbackResponse | AxiosError) => {
-   // handle response
+  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+    // handle response
+  }
 });
 ```
 <!-- End SDK Example Usage -->
@@ -43,9 +42,9 @@ sdk.feedback(req).then((res: FeedbackResponse | AxiosError) => {
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
-### SDK SDK
+### [SDK](docs/sdk/README.md)
 
-* `feedback` - feedback
+* [feedback](docs/sdk/README.md#feedback) - feedback
 <!-- End SDK Available Operations -->
 
 ### Maturity
