@@ -34,8 +34,8 @@ export class SDK {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "1.6.0";
-  private _genVersion = "2.22.0";
+  private _sdkVersion = "1.7.0";
+  private _genVersion = "2.23.2";
   private _globals: any;
 
   constructor(props?: SDKProps) {
@@ -49,7 +49,7 @@ export class SDK {
   /**
    * feedback
    */
-  feedback(
+  async feedback(
     req: operations.FeedbackRequestBody,
     security: operations.FeedbackSecurity,
     config?: AxiosRequestConfig
@@ -87,7 +87,8 @@ export class SDK {
     if (reqBody == null || Object.keys(reqBody).length === 0)
       throw new Error("request body is required");
 
-    const r = client.request({
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
       url: url,
       method: "post",
       headers: headers,
@@ -95,22 +96,22 @@ export class SDK {
       ...config,
     });
 
-    return r.then((httpRes: AxiosResponse) => {
-      const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-      if (httpRes?.status == null)
-        throw new Error(`status code not found in response: ${httpRes}`);
-      const res: operations.FeedbackResponse = new operations.FeedbackResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-      switch (true) {
-        case httpRes?.status == 200:
-          break;
-      }
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
 
-      return res;
+    const res: operations.FeedbackResponse = new operations.FeedbackResponse({
+      statusCode: httpRes.status,
+      contentType: contentType,
+      rawResponse: httpRes,
     });
+    switch (true) {
+      case httpRes?.status == 200:
+        break;
+    }
+
+    return res;
   }
 }

@@ -16,19 +16,16 @@ feedback
 
 ```typescript
 import { SDK } from "Feedback";
-import { FeedbackRequestBody, FeedbackResponse } from "Feedback/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { FeedbackResponse } from "Feedback/dist/sdk/models/operations";
 
 const sdk = new SDK();
 
-const req: FeedbackRequestBody = {
+sdk.sdk.feedback({
   completion: "quibusdam",
   model: "unde",
   prompt: "nulla",
-};
-
-sdk.sdk.feedback(req).then((res: FeedbackResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: FeedbackResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });

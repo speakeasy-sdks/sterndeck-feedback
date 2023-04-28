@@ -1,19 +1,16 @@
 <!-- Start SDK Example Usage -->
 ```typescript
 import { SDK } from "Feedback";
-import { FeedbackRequestBody, FeedbackResponse } from "Feedback/dist/sdk/models/operations";
-import { AxiosError } from "axios";
+import { FeedbackResponse } from "Feedback/dist/sdk/models/operations";
 
 const sdk = new SDK();
 
-const req: FeedbackRequestBody = {
+sdk.feedback({
   completion: "corrupti",
   model: "provident",
   prompt: "distinctio",
-};
-
-sdk.feedback(req).then((res: FeedbackResponse | AxiosError) => {
-  if (res instanceof UsageExamplePostResponse && res.statusCode == 200) {
+}).then((res: FeedbackResponse) => {
+  if (res.statusCode == 200) {
     // handle response
   }
 });
