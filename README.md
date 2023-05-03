@@ -28,6 +28,8 @@ sdk.feedback({
   completion: "corrupti",
   model: "provident",
   prompt: "distinctio",
+}, {
+  speakeasyApiKey: "Bearer YOUR_ACCESS_TOKEN_HERE",
 }).then((res: FeedbackResponse) => {
   if (res.statusCode == 200) {
     // handle response
