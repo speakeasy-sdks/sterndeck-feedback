@@ -1,6 +1,6 @@
 {
   "name": "Feedback",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "author": "SternDeck",
   "scripts": {
     "prepare": "tsc --build"

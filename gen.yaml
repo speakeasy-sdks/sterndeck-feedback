@@ -2,14 +2,14 @@ configVersion: 1.0.0
 management:
   docChecksum: b637c15dd38ba23d8808bb29a707d6fe
   docVersion: 1.0.0
-  speakeasyVersion: 1.29.0
-  generationVersion: 2.26.0
+  speakeasyVersion: 1.29.1
+  generationVersion: 2.26.1
 generation:
   telemetryEnabled: false
   sdkClassName: SDK
   singleTagPerOp: false
 typescript:
-  version: 1.9.0
+  version: 1.9.1
   author: SternDeck
   maxMethodParams: 0
   packageName: Feedback
