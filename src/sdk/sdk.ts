@@ -34,8 +34,8 @@ export class SDK {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "1.12.0";
-  private _genVersion = "2.29.0";
+  private _sdkVersion = "1.13.0";
+  private _genVersion = "2.30.0";
   private _globals: any;
 
   constructor(props?: SDKProps) {
@@ -86,6 +86,9 @@ export class SDK {
     const headers = { ...reqBodyHeaders, ...config?.headers };
     if (reqBody == null || Object.keys(reqBody).length === 0)
       throw new Error("request body is required");
+    headers[
+      "user-agent"
+    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
     const httpRes: AxiosResponse = await client.request({
       validateStatus: () => true,
