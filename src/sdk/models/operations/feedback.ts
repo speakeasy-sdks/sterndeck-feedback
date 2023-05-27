@@ -7,33 +7,31 @@ import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
 export class FeedbackSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=oauth2;name=Authorization",
-  })
-  speakeasyApiKey: string;
+    @SpeakeasyMetadata({ data: "security, scheme=true;type=oauth2;name=Authorization" })
+    speakeasyApiKey: string;
 }
 
 export class FeedbackRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "completion" })
-  completion?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "completion" })
+    completion?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "model" })
-  model?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "model" })
+    model?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "prompt" })
-  prompt?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "prompt" })
+    prompt?: string;
 }
 
 export class FeedbackResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }
