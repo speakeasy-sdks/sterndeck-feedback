@@ -2,7 +2,7 @@
 
 ## Overview
 
-A simple API to manage a list of tasks
+sterndeck-4: A simple API to manage a list of tasks
 
 ### Available Operations
 

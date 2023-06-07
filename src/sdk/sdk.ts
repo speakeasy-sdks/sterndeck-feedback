@@ -38,8 +38,8 @@ export class SDKConfiguration {
     serverURL: string;
     serverDefaults: any;
     language = "typescript";
-    sdkVersion = "1.17.0";
-    genVersion = "2.35.3";
+    sdkVersion = "1.17.1";
+    genVersion = "2.35.9";
 
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -47,7 +47,7 @@ export class SDKConfiguration {
 }
 
 /**
- * A simple API to manage a list of tasks
+ * sterndeck-4: A simple API to manage a list of tasks
  */
 export class SDK {
     private sdkConfiguration: SDKConfiguration;
