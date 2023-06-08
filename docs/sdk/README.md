@@ -25,7 +25,7 @@ sdk.sdk.feedback({
   model: "unde",
   prompt: "nulla",
 }, {
-  speakeasyApiKey: "Bearer YOUR_ACCESS_TOKEN_HERE",
+  speakeasyApiKey: "",
 }).then((res: FeedbackResponse) => {
   if (res.statusCode == 200) {
     // handle response
