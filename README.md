@@ -41,9 +41,9 @@ sdk.feedback({
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
-### [SDK](docs/sdk/README.md)
+### [SDK](docs/sdks/sdk/README.md)
 
-* [feedback](docs/sdk/README.md#feedback) - feedback
+* [feedback](docs/sdks/sdk/README.md#feedback) - feedback
 <!-- End SDK Available Operations -->
 
 ### Maturity

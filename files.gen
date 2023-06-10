@@ -20,5 +20,8 @@ src/sdk/types/rfcdate.ts
 tsconfig.json
 src/sdk/models/operations/feedback.ts
 src/sdk/models/operations/index.ts
-docs/sdk/README.md
+docs/sdks/sdk/README.md
 USAGE.md
+docs/models/operations/feedbacksecurity.md
+docs/models/operations/feedbackrequestbody.md
+docs/models/operations/feedbackresponse.md
